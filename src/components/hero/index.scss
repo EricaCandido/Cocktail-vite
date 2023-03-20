@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap");
+
+.Hero {
+  position: relative;
+  height: 80vh;
+  border: 20px solid black;
+
+  &__inshaker {
+    position: absolute;
+    left: 2%;
+    padding: 10px;
+    border: 1px solid black;
+    width: fit-content;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.35s ease-out;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.35);
+    &:hover {
+      color: white;
+      background: rgba(63, 13, 18, 1) 100%;
+    }
+  }
+
+  &__title-one {
+    font-family: "Tangerine", cursive;
+    font-size: 14rem;
+    font-weight: 700;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    left: 6%;
+  }
+  &__title-two {
+    font-family: "Tangerine", cursive;
+    font-size: 10rem;
+    margin: 0;
+    position: absolute;
+    top: 25%;
+    left: 2%;
+  }
+  &__title-three {
+    font-family: "Tangerine", cursive;
+    font-size: 8rem;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    right: 25%;
+  }
+  &__quote {
+    font-size: 1.2rem;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+    font-variant: small-caps;
+  }
+
+  .categories {
+    width: 100%;
+    padding: 0;
+    position: absolute;
+    bottom: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    list-style-type: none;
+    gap: 10px;
+    text-align: center;
+    font-variant: small-caps;
+  }
+  .categories li {
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 7px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.35);
+    cursor: pointer;
+    transition: all 0.35s ease-out;
+    &:hover {
+      color: white;
+      background: rgba(63, 13, 18, 1) 100%;
+    }
+  }
+}
