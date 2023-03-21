@@ -1,10 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,800&display=swap");
+
 .App {
-  background: rgb(255, 166, 158);
+  // background: rgb(255, 166, 158);
+  // background: linear-gradient(
+  //   90deg,
+  //   rgba(255, 166, 158, 1) 20%,
+  //   rgba(134, 22, 87, 1) 100%
+  // );
+  background: rgb(250, 234, 214);
   background: linear-gradient(
     90deg,
-    rgba(255, 166, 158, 1) 20%,
-    rgba(134, 22, 87, 1) 100%
+    rgba(250, 234, 214, 1) 37%,
+    rgba(75, 13, 13, 1) 100%
   );
   display: flex;
   flex-direction: column;
+  padding-bottom: 150px;
+  font-family: "Montserrat", sans-serif;
 }

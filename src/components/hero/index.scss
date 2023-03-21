@@ -1,23 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap");
-
+@import "../../styles/variables";
+@import "../../styles/mixins";
 .Hero {
   position: relative;
   height: 80vh;
-  border: 20px solid black;
+  border: 20px solid $primary-color;
 
   &__inshaker {
     position: absolute;
     left: 2%;
     padding: 10px;
-    border: 1px solid black;
+    border: 1px solid $secondary-color;
     width: fit-content;
     border-radius: 20px;
     cursor: pointer;
     transition: all 0.35s ease-out;
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.35);
+    box-shadow: $box-shadow;
     &:hover {
-      color: white;
-      background: rgba(63, 13, 18, 1) 100%;
+      color: $impression-color;
+      background: rgba(63, 13, 18, 1);
     }
   }
 
@@ -60,25 +61,21 @@
     padding: 0;
     position: absolute;
     bottom: 10%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+    @include flex-container(row, 10px, wrap, center, center);
     list-style-type: none;
-    gap: 10px;
     text-align: center;
     font-variant: small-caps;
   }
   .categories li {
-    border: 1px solid black;
+    border: 1px solid $secondary-color;
     border-radius: 20px;
     padding: 7px;
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.35);
+    box-shadow: $box-shadow;
     cursor: pointer;
     transition: all 0.35s ease-out;
     &:hover {
-      color: white;
-      background: rgba(63, 13, 18, 1) 100%;
+      color: $impression-color;
+      background: $active-color_deep;
     }
   }
 }

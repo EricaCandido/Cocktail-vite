@@ -1,9 +1,8 @@
 import "./index.scss";
 
-const Hero = (setCocktailList, cocktailList) => {
+const Hero = ({ setCategory }) => {
   const onHandleFilter = (category) => {
-    console.log("nka");
-    setCocktailList(cocktailList.filter(cocktail.strCategory == category));
+    setCategory(category);
   };
 
   return (
@@ -17,14 +16,17 @@ const Hero = (setCocktailList, cocktailList) => {
         bacteria.”
       </p>
       <ul className="categories">
-        <li onClick={() => onHandleFilter("")}>All cocktails</li>
         <li onClick={() => onHandleFilter("Ordinary Drink")}>Ordinary Drink</li>
-        <li>Cocktail</li>
-        <li>Soft Drink</li>
-        <li onClick={() => onHandleFilter("Ordinary Drink")}>Shots</li>
-        <li>Punch / Party Drink</li>
-        <li>Homemade Liqueur</li> <li>Shot</li>
-        <li>Other / Unknown</li>
+        <li onClick={() => onHandleFilter("Cocktail")}>Cocktail</li>
+        <li onClick={() => onHandleFilter("Ordinary Drink")}>Soft Drink</li>
+        <li onClick={() => onHandleFilter("Shot")}>Shots</li>
+        <li onClick={() => onHandleFilter("Punch / Party Drink")}>
+          Punch / Party Drink
+        </li>
+        <li onClick={() => onHandleFilter("Homemade Liqueur")}>
+          Homemade Liqueur
+        </li>
+        <li onClick={() => onHandleFilter("Other / Unknown")}>Other</li>
       </ul>
     </div>
   );
