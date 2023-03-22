@@ -1,8 +1,9 @@
 @import "../../styles/variables";
 @import "../../styles/mixins";
 .Card {
-  padding-top: 90px;
+  padding-bottom: 90px;
   .wrapper {
+    border: 1px solid red;
     border-radius: 8px;
     // width: 250px;
     height: 300px;
