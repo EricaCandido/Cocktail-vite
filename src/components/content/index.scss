@@ -1,6 +1,0 @@
-@import "../../styles/mixins";
-
-.Content {
-  margin: 20px;
-  @include flex-container(row, 40px, wrap);
-}

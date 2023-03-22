@@ -10,10 +10,10 @@ export const ingredientsList = (item) => {
     counter++;
   }
   const filtered = list.filter((item) => item != null);
-  console.log(filtered);
+
   return filtered;
 };
-
+//Object.entries=> costruisce una lista di liste di coppie chiave, valore
 //prod[0][Object.keys(prod[0])[17]]
 
 // const item = {

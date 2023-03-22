@@ -1,4 +1,4 @@
-import "./index.scss";
+import styles from "./index.module.scss";
 import { ingredientsList } from "../../utils/funcs";
 
 const Card = ({ cocktail, setModalContext }) => {
@@ -13,18 +13,22 @@ const Card = ({ cocktail, setModalContext }) => {
   const lista = ingredientsList(cocktail);
 
   return (
-    <div className="Card">
-      <div className="Card__wrapper">
-        <img src={cocktail.strDrinkThumb} alt={cocktail.strDrink} />
-        <div className="Card__text">
-          <p onClick={onHandleClick} className="Card__title">
+    <div className={styles.Card}>
+      <div className={styles.wrapper}>
+        <img
+          className={styles.img}
+          src={cocktail.strDrinkThumb}
+          alt={cocktail.strDrink}
+        />
+        <div className={styles.text}>
+          <p onClick={onHandleClick} className={styles.title}>
             {cocktail.strDrink}
           </p>
-          <p className="Card__text-impo">{cocktail.strAlcoholic}</p>
-          <p className="Card__text-ingr-title">Ingredienti: </p>{" "}
-          <ul className="Card__text-ingredients">
+          <p className={styles.textImpo}>{cocktail.strAlcoholic}</p>
+          <p className={styles.ingrTitle}>Ingredienti: </p>
+          <ul className={styles.ingredients}>
             {lista.map((x) => (
-              <li>{x}</li>
+              <li key={x}>{x}</li>
             ))}
             {/* <li>{cocktail.strIngredient1}</li>
             <li>{cocktail.strIngredient2}</li>

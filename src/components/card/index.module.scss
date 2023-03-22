@@ -1,0 +1,83 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+.Card {
+  padding-top: 90px;
+  .wrapper {
+    border-radius: 8px;
+    // width: 250px;
+    height: 300px;
+    position: relative;
+    box-shadow: 0 0 4px $secondary-color;
+    // box-shadow: $box-shadow;
+    &:hover .img {
+      transform: rotate(360deg);
+    }
+    .img {
+      border-radius: 8px;
+      // width: 250px;
+      height: 200px;
+      transition: transform 1s;
+    }
+
+    .text {
+      background: $impression-color;
+      position: absolute;
+      left: -35px;
+      bottom: -100px;
+      width: 250px;
+      height: 230px;
+      padding: 10px;
+      color: $primary-color;
+      box-shadow: $box-shadow;
+      border-radius: 8px;
+      z-index: 1;
+      cursor: pointer;
+
+      .title {
+        font-size: 0.8rem;
+        font-weight: bold;
+        padding: 0 10px;
+      }
+
+      .ingredients {
+        padding: 0 20px;
+        font-size: 0.8rem;
+        height: 75px;
+        @include flex-container(column, 4px, wrap, flex-start, flex-start);
+      }
+
+      .title {
+        padding: 6px;
+        margin: 0;
+        font-variant: small-caps;
+        font-size: 1.5rem;
+        font-weight: bold;
+        cursor: pointer;
+        border-bottom: 1px solid $secondary-color;
+        transition: transform 0.35s;
+
+        &:hover {
+          color: $active-color;
+          transform: scale(1.1);
+          border-bottom: 1px solid $active-color;
+        }
+      }
+      .ingrTitle {
+        padding-bottom: 5px;
+        text-align: right;
+        font-weight: bold;
+        border-bottom: 1px solid $primary-color;
+      }
+      .textImpo {
+        margin: 5px;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .Card {
+    gap: 0;
+  }
+}

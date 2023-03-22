@@ -1,4 +1,4 @@
-import "./index.scss";
+import styles from "./index.module.scss";
 import { ingredientsList } from "../../utils/funcs";
 
 const CocktailDetail = ({ data, setModalContext }) => {
@@ -11,18 +11,15 @@ const CocktailDetail = ({ data, setModalContext }) => {
   const lista = ingredientsList(data);
 
   return (
-    <div className="CocktailDetail">
-      <div className="CocktailDetail__wrapper">
-        <button
-          onClick={onHandleClick}
-          className="CocktailDetail__wrapper__close"
-        >
-          🍸❌
+    <div className={styles.CocktailDetail}>
+      <div className={styles.wrapper}>
+        <button onClick={onHandleClick} className={styles.close}>
+          ❌
         </button>
-        <div className="CocktailDetail__wrapper__text">
-          <h2 className="CocktailDetail__wrapper__title">{data.strDrink}</h2>
+        <div className={styles.text}>
+          <h2 className={styles.title}>{data.strDrink}</h2>
           <p>{data.strInstructionsIT}</p>
-          <p className="CocktailDetail__wrapper__title">Ingredienti:</p>
+          <p className={styles.title}>Ingredienti:</p>
           {lista.map((x) => (
             <li>{x}</li>
           ))}
@@ -31,7 +28,7 @@ const CocktailDetail = ({ data, setModalContext }) => {
           <li>{data.strIngredient3}</li>
           <li>{data.strIngredient4}</li> */}
         </div>
-        <div className="CocktailDetail__wrapper__img">
+        <div className={styles.img}>
           <img src={data.strDrinkThumb} alt="strDrinkThumb" />
         </div>
       </div>

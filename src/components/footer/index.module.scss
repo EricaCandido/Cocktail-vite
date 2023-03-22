@@ -1,0 +1,35 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+.Footer {
+  background-color: #1d040427;
+  padding-top: 20px;
+  @include flex-container();
+
+  .wrapper {
+    width: 100%;
+
+    @include flex-container(row, 0, nowrap, space-around, center);
+
+    .links {
+      @include flex-container();
+      color: $impression-color;
+      p {
+        cursor: pointer;
+
+        &:hover {
+          transform: scale(1.1);
+          font-weight: bold;
+        }
+      }
+    }
+
+    .text {
+      @include flex-container();
+      color: $impression-color;
+    }
+  }
+  .rights {
+    font-size: 0.7rem;
+    font-weight: bold;
+  }
+}

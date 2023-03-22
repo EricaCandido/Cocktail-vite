@@ -1,4 +1,4 @@
-import "./index.scss";
+import styles from "./index.module.scss";
 
 const Hero = ({ setCategory }) => {
   const onHandleFilter = (category) => {
@@ -6,16 +6,25 @@ const Hero = ({ setCategory }) => {
   };
 
   return (
-    <div className="Hero">
-      <p className="Hero__inshaker">Inshaker</p>
-      <p className="Hero__title-one">Strong</p>
-      <p className="Hero__title-two">& Light</p>
-      <p className="Hero__title-three">Cocktails</p>
-      <p className="Hero__quote">
+    <div className={styles.Hero}>
+      <p className={styles.inshaker}>Inshaker</p>
+
+      <div className={styles.titleOne}>
+        <p>Strong</p>
+        <p className={styles.titleLight}>&Light</p>
+      </div>
+
+      <p className={styles.titleThree}>Cocktails</p>
+      <img
+        className={styles.titleImage}
+        src="https://cdn-icons-png.flaticon.com/512/442/442032.png?w=740&t=st=1679431232~exp=1679431832~hmac=ceb6ced3dc4bd097bc7a9b620835a555565451e602647207f1a330f84ce67613"
+        alt="img"
+      />
+      <p className={styles.quote}>
         “In wine there is wisdom, in beer there is Freedom, in water there is
         bacteria.”
       </p>
-      <ul className="categories">
+      <ul className={styles.categories}>
         <li onClick={() => onHandleFilter("Ordinary Drink")}>Ordinary Drink</li>
         <li onClick={() => onHandleFilter("Cocktail")}>Cocktail</li>
         <li onClick={() => onHandleFilter("Ordinary Drink")}>Soft Drink</li>

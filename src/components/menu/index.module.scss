@@ -1,0 +1,11 @@
+.Menu {
+  position: absolute;
+  top: 3%;
+  right: 4%;
+
+  .visible {
+    height: 300px;
+    width: 300px;
+    background-color: white;
+  }
+}

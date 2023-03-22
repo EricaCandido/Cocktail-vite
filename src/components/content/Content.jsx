@@ -1,13 +1,13 @@
-import "./index.scss";
+import styles from "./index.module.scss";
 import Card from "../card";
 
 const Content = ({ cocktailList, setModalContext }) => {
   return (
-    <div className="Content">
+    <div className={styles.Content}>
       {cocktailList.map((cocktail) => (
         <Card
           cocktail={cocktail}
-          key={cocktail.id}
+          key={cocktail.idDrink}
           setModalContext={setModalContext}
         />
       ))}

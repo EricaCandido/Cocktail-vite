@@ -1,6 +1,8 @@
-import "./App.scss";
+import styles from "./App.module.scss";
 import Content from "./components/content/Content";
 import Hero from "./components/hero";
+import Footer from "./components/footer";
+import Menu from "./components/menu";
 import { useState, useEffect } from "react";
 import { GET } from "./utils/http";
 import { filteredList } from "./utils/funcs";
@@ -22,7 +24,8 @@ function App() {
     );
   }, []);
   return (
-    <div className="App">
+    <div className={styles.App}>
+      <Menu />
       <Hero setCategory={setCategory} />
 
       {modalContext.isVisible ? (
@@ -37,6 +40,7 @@ function App() {
           setCocktailList={setCocktailList}
         />
       )}
+      <Footer />
     </div>
   );
 }
