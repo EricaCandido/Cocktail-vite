@@ -1,15 +1,23 @@
 import styles from "./index.module.scss";
-import { useState } from "react";
+// import { useState } from "react";
 
 const Reservation = ({
   setReservationVisibility,
   setPopupVisibility,
   setReserved,
+  setName,
+  setSurname,
+  setDate,
+  setTime,
+  name,
+  surname,
+  date,
+  time,
 }) => {
-  const [name, setName] = useState("");
-  const [surname, setSurname] = useState("");
-  const [date, setDate] = useState("");
-  const [time, setTime] = useState("");
+  // const [name, setName] = useState("");
+  // const [surname, setSurname] = useState("");
+  // const [date, setDate] = useState("");
+  // const [time, setTime] = useState("");
 
   const onHandleClose = () => {
     setReservationVisibility(false);
@@ -60,7 +68,7 @@ const Reservation = ({
         ❌
       </button>
       <form onSubmit={onHandleSubmit} className={styles.resForm}>
-        <h3>Inserisci i dati per la prenotazione</h3>
+        <h3 className={styles.title}>Inserisci i dati per la prenotazione</h3>
         <input
           onChange={onHandleNameInput}
           name="name"

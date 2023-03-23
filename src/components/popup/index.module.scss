@@ -12,3 +12,8 @@
   color: $impression-color;
   z-index: 20;
 }
+@media screen and (max-width: 420px) {
+  .Popup {
+    width: 200px;
+  }
+}

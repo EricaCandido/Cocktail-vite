@@ -17,6 +17,10 @@ function App() {
   const [reservationVisible, setReservationVisibility] = useState(false);
   const [popupVisibile, setPopupVisibility] = useState(false);
   const [reserved, setReserved] = useState(false);
+  const [name, setName] = useState("");
+  const [surname, setSurname] = useState("");
+  const [date, setDate] = useState("");
+  const [time, setTime] = useState("");
   const [modalContext, setModalContext] = useState({
     isVisible: false,
     data: {},
@@ -25,7 +29,7 @@ function App() {
   reserved &&
     setTimeout(() => {
       setPopupVisibility(false);
-    }, 3000);
+    }, 4000);
 
   useEffect(() => {
     GET("https://www.thecocktaildb.com/api/json/v1/1/search.php?f=f").then(
@@ -42,12 +46,22 @@ function App() {
           setReservationVisibility={setReservationVisibility}
           setPopupVisibility={setPopupVisibility}
           setReserved={setReserved}
+          setName={setName}
+          setSurname={setSurname}
+          setDate={setDate}
+          setTime={setTime}
+          name={name}
+          surname={surname}
+          date={date}
+          time={time}
         />
       )}
       {popupVisibile && (
         <Popup>
           <h3>Tavolo prenotato con successo!</h3>
-          <p>Ti aspettiamo giorno x alle ore y.</p>
+          <p>
+            Ciao {name}, ti aspettiamo giorno {date.slice(6)} alle ore {time}.
+          </p>
         </Popup>
       )}
       <Hero

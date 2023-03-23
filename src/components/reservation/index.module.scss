@@ -70,10 +70,25 @@
     }
   }
 }
+
 @media screen and (max-width: 420px) {
-  .resForm {
-    width: 150px;
-    height: 250px;
-    border: 2px solid red;
+  .Reservation {
+    .resForm {
+      width: 200px;
+      // height: 250px;
+
+      right: calc(50% - 100px);
+    }
+    .close {
+      right: calc(50% - 100px);
+    }
+    .image {
+      left: calc(50% - 105px);
+      height: 70px;
+    }
+    .title {
+      text-align: center;
+      padding: 0 10px;
+    }
   }
 }
