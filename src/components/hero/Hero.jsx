@@ -1,13 +1,30 @@
 import styles from "./index.module.scss";
+import { RxHamburgerMenu } from "react-icons/rx";
 
-const Hero = ({ setCategory }) => {
+const Hero = ({ setCategory, setMenuVisibility, setReservationVisibility }) => {
   const onHandleFilter = (category) => {
     setCategory(category);
   };
 
+  const onHandleMenuVisibility = () => {
+    setMenuVisibility((prev) => !prev);
+  };
+
+  const onHandleReservationVisibility = () => {
+    setReservationVisibility(true);
+  };
+
   return (
     <div className={styles.Hero}>
-      <p className={styles.inshaker}>Inshaker</p>
+      <div className={styles.nav}>
+        <p onClick={onHandleReservationVisibility} className={styles.booking}>
+          Book a table
+        </p>
+        <RxHamburgerMenu
+          className={styles.hamburger}
+          onClick={onHandleMenuVisibility}
+        />
+      </div>
 
       <div className={styles.titleOne}>
         <p>Strong</p>

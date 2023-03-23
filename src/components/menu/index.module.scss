@@ -1,11 +1,37 @@
-.Menu {
-  position: absolute;
-  top: 3%;
-  right: 4%;
+@import "../../styles/variables";
+@import "../../styles/mixins";
 
-  .visible {
-    height: 300px;
-    width: 300px;
-    background-color: white;
+.MenuNotVisible {
+  display: none;
+  transition: display 0.35s;
+  ul {
+    padding: 20px;
+    list-style-type: none;
+    background-color: $primary-color;
+    color: $impression-color;
+    border-radius: 20px;
+    box-shadow: $box-shadow;
+    @include flex-container(column, 50px, nowrap, center, flex-start);
+
+    li {
+      cursor: pointer;
+      width: 192px;
+      border-bottom: 1px solid $impression-color;
+      padding: 5px;
+      transition: transform 0.35s;
+
+      &:hover {
+        background-color: $active-color;
+        transform: scale(1.1);
+      }
+    }
   }
+}
+.MenuVisible {
+  transition: display 1s;
+  display: block;
+  position: absolute;
+  top: 7%;
+  right: 3%;
+  z-index: 1;
 }
