@@ -59,7 +59,7 @@ function App() {
       {popupVisibile && (
         <Popup>
           <h3>Tavolo prenotato con successo!</h3>
-          <p>
+          <p className={styles.popupMessage}>
             Ciao {name}, ti aspettiamo giorno {date.slice(6)} alle ore {time}.
           </p>
         </Popup>

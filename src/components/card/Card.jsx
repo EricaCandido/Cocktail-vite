@@ -25,7 +25,7 @@ const Card = ({ cocktail, setModalContext }) => {
             {cocktail.strDrink}
           </p>
           <p className={styles.textImpo}>{cocktail.strAlcoholic}</p>
-          <p className={styles.ingrTitle}>Ingredienti: </p>
+          <p className={styles.ingrTitle}>Ingredients: </p>
           <ul className={styles.ingredients}>
             {lista.map((x) => (
               <li key={x}>{x}</li>

@@ -19,7 +19,7 @@ const CocktailDetail = ({ data, setModalContext }) => {
         <div className={styles.text}>
           <h2 className={styles.title}>{data.strDrink}</h2>
           <p>{data.strInstructionsIT}</p>
-          <p className={styles.title}>Ingredienti:</p>
+          <p className={styles.title}>Ingredients:</p>
           {lista.map((x) => (
             <li>{x}</li>
           ))}
