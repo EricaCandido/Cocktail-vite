@@ -10,5 +10,3 @@ Progettino realizzato con Vite, sito vetrina interattivo 🤩
  🖼️ Framework: React <br/>
  
  🎨 Style: SASS & CSS Modules 
- 
- <img src="./view.png" alt="immagine" width="500px" />
