@@ -4,7 +4,7 @@
 .CocktailDetail {
   @include flex-container(row);
 
-  height: 100vh;
+  // height: 100vh;
   padding-top: 30px;
   .wrapper {
     width: 700px;

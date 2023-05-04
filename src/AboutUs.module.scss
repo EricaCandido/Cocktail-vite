@@ -1,0 +1,130 @@
+.AboutUs {
+  @include flex-container();
+  box-sizing: border-box;
+  nav {
+    box-sizing: border-box;
+    width: 95%;
+    @include flex-container(row, 0, nowrap, space-between, start);
+    padding: 20px;
+    @include desktop {
+      width: 80%;
+    }
+
+    .logo {
+      padding-bottom: 50px;
+      width: 20%;
+      @include flex-container(column);
+
+      .titleOne {
+        @include flex-container(row); // font-family: "Tangerine", cursive;
+        font-family: "Playfair Display", serif;
+        font-size: 2rem;
+        font-weight: bold;
+        border-bottom: 1px solid $primary-color;
+        p {
+          margin: 0;
+          padding: 0;
+          @include tablet {
+            font-size: 1.3rem;
+          }
+        }
+      }
+
+      .titleLight {
+        font-weight: lighter;
+      }
+
+      .titleThree {
+        font-family: "Montserrat", sans-serif;
+        font-size: 1rem;
+        margin: 5px;
+        top: 50%;
+        right: 5%;
+        color: antiquewhite;
+        p {
+          margin: 0;
+          padding: 0;
+        }
+        @include tablet {
+          font-size: 1.2rem;
+        }
+      }
+    }
+    .titleImage {
+      width: 50px;
+      padding: 10px;
+    }
+
+    .back {
+      transition: transform 0.35s;
+      a {
+        text-decoration: none;
+        color: $impression-color;
+        &:hover {
+          color: $secondary-color;
+        }
+      }
+      &:hover {
+        transform: scale(1.2);
+        color: $secondary-color;
+      }
+    }
+  }
+  .Wrapper {
+    @include flex-container(row);
+    max-width: 700px;
+    border-radius: 24px;
+    @include tablet {
+      @include flex-container();
+
+      max-width: 70%;
+    }
+    .photo {
+      width: 49.5%;
+      border-bottom-right-radius: 24px;
+      border-top-right-radius: 24px;
+      @include tablet {
+        border-radius: 0;
+        border-bottom-right-radius: 24px;
+        border-bottom-left-radius: 24px;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+    .textWrapper {
+      border-bottom-left-radius: 24px;
+      border-top-left-radius: 24px;
+      background-color: $primary-color;
+      padding: 20px;
+      width: 60%;
+      @include tablet {
+        border-radius: 0;
+        border-top-right-radius: 24px;
+        border-top-left-radius: 24px;
+        width: calc(100% - 40px);
+        object-fit: cover;
+      }
+
+      h3 {
+        font-size: 1.4rem;
+        color: $impression-color;
+      }
+      p,
+      a {
+        @include flex-container(row, 0, nowrap, start, center);
+        color: $impression-color;
+        margin: 5px;
+        text-decoration: none;
+        transition: transform 0.35s;
+
+        img {
+          width: 30px;
+        }
+      }
+
+      a:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}

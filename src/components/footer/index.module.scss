@@ -1,7 +1,5 @@
-// @import "../../styles/variables";
-// @import "../../styles/mixins";
 .Footer {
-  background-color: #1d040427;
+  background: rgba(56, 41, 41, 0.303);
   padding-top: 20px;
   @include flex-container();
 
@@ -11,10 +9,15 @@
     @include flex-container(row, 0, nowrap, space-around, center);
 
     .links {
-      @include flex-container();
-      color: $impression-color;
-      p {
+      @include flex-container(column, 22px);
+
+      p,
+      a {
+        text-decoration: none;
+        color: $impression-color;
         cursor: pointer;
+        transition: transform 0.35s;
+        margin: 0;
 
         &:hover {
           transform: scale(1.1);

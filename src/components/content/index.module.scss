@@ -1,14 +1,8 @@
-// @import "../../styles/mixins";
-
 .Content {
-  margin: 20px;
+  margin: 30px;
   @include flex-container(row, 90px, wrap);
 }
-@media screen and (max-width: 800px) {
-  // .Content {
-  //
-  // }
-}
+
 @media screen and (max-width: 400px) {
   .Content {
     flex-direction: column;

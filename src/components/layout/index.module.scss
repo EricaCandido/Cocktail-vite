@@ -1,0 +1,11 @@
+.Layout {
+  font-family: "Montserrat", sans-serif;
+  position: relative;
+  background: rgb(250, 234, 214);
+  background: radial-gradient(circle, rgba(250, 234, 214, 1) 15%, #4b0d0d 100%);
+  section {
+    padding-bottom: 100px;
+    position: relative;
+    min-height: calc(100vh - 350px);
+  }
+}

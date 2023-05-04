@@ -1,12 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap");
-// @import "../../styles/variables";
-// @import "../../styles/mixins";
+
 .Hero {
   position: relative;
-  height: 80vh;
-  border-bottom: 1px solid $primary-color;
+
   @include flex-container();
+
   .nav {
     padding: 0 20px;
     position: absolute;
@@ -32,93 +31,109 @@
     font-size: 2rem;
     cursor: pointer;
   }
-
-  .titleOne {
-    @include flex-container(row); // font-family: "Tangerine", cursive;
-    font-family: "Playfair Display", serif;
-    font-size: 6rem;
-    font-weight: bold;
-    border-bottom: 1px solid $primary-color;
-    p {
-      margin: 0;
-      padding: 0;
-    }
-  }
-  .titleLight {
-    font-weight: lighter;
-  }
-
-  .titleThree {
-    font-family: "Montserrat", sans-serif;
-    font-size: 2rem;
-    margin: 5px;
-    top: 50%;
-    right: 5%;
-    color: antiquewhite;
-    p {
-      margin: 0;
-      padding: 0;
-    }
-  }
-  .titleImage {
-    width: 50px;
-    padding: 10px;
-  }
-  .quote {
-    position: absolute;
-    font-size: 1.2rem;
+  .main {
+    padding-bottom: 50px;
+    padding-top: 180px;
     width: 100%;
-    bottom: 0;
-    text-align: center;
-    font-variant: small-caps;
-  }
+    border-bottom: 0.5px solid $primary-color;
+    @include flex-container(column);
+    .titleOne {
+      @include flex-container(row); // font-family: "Tangerine", cursive;
+      font-family: "Playfair Display", serif;
+      font-size: 6rem;
+      font-weight: bold;
+      border-bottom: 1px solid $primary-color;
+      p {
+        margin: 0;
+        padding: 0;
+        @include tablet {
+          font-size: 2.3rem;
+        }
+      }
+    }
 
-  .categories {
-    width: 100%;
-    padding: 0;
-    position: absolute;
-    bottom: -15%;
-    @include flex-container(row, 10px, wrap, center, center);
-    list-style-type: none;
-    text-align: center;
-    font-variant: small-caps;
-  }
-  .categories li {
-    border: 1px solid $secondary-color;
-    border-radius: 20px;
-    padding: 7px;
-    box-shadow: $box-shadow;
-    cursor: pointer;
-    transition: all 0.35s ease-out;
-    &:hover {
-      color: $impression-color;
-      background: $active-color_deep;
+    .titleLight {
+      font-weight: lighter;
     }
-  }
-  @media screen and (max-width: 800px) {
-    .inshaker {
-      font-size: 0.8rem;
-    }
-    .titleOne {
-      font-size: 4rem;
-    }
-    .categories {
-      bottom: -20%;
-      font-size: 0.8rem;
-    }
-  }
-  @media screen and (max-width: 400px) {
-    .titleOne {
-      font-size: 2.3rem;
-    }
+
     .titleThree {
-      font-size: 1.5rem;
+      font-family: "Montserrat", sans-serif;
+      font-size: 2rem;
+      margin: 5px;
+      top: 50%;
+      right: 5%;
+      color: antiquewhite;
+      p {
+        margin: 0;
+        padding: 0;
+      }
+      @include tablet {
+        font-size: 1.2rem;
+      }
+    }
+    .titleImage {
+      width: 50px;
+      padding: 10px;
     }
     .quote {
-      font-size: 1rem;
+      font-size: 1.2rem;
+      width: 100%;
+      bottom: 0;
+      text-align: center;
+      font-variant: small-caps;
+    }
+  }
+  .lists {
+    @include flex-container(column);
+
+    .alphabet {
+      padding: 0;
+      bottom: -15%;
+      list-style-type: none;
+      @include flex-container(row, 10px, wrap);
+
+      li {
+        height: 22px;
+        width: 22px;
+        border: 0.5px solid $primary-color;
+        border-radius: 100%;
+        text-align: center;
+        cursor: pointer;
+        transition: transform 0.35s;
+        transition: color 0.35s;
+        &:hover {
+          transform: scale(1.3);
+          border: none;
+          background-color: $primary-color;
+          color: $impression-color;
+        }
+      }
+      // .selected {
+      //   height: 28.6px;
+      //   width: 28.6px;
+      //   border: none;
+      //   background-color: $primary-color;
+      //   color: $impression-color;
+      // }
     }
     .categories {
-      bottom: -27%;
+      padding: 0;
+      @include flex-container(row, 10px, wrap, center, center);
+      list-style-type: none;
+      text-align: center;
+      font-variant: small-caps;
+    }
+    .categories li {
+      border: 1px solid $secondary-color;
+      border-radius: 20px;
+      padding: 7px;
+      box-shadow: $box-shadow;
+      cursor: pointer;
+      transition: all 0.35s ease-out;
+      &:hover {
+        color: $impression-color;
+        background: $active-color_deep;
+      }
     }
   }
 }

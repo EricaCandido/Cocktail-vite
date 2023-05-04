@@ -1,4 +1,5 @@
 import styles from "./index.module.scss";
+import { Link } from "react-router-dom";
 
 const Menu = ({ menuVisible }) => {
   return (
@@ -8,8 +9,12 @@ const Menu = ({ menuVisible }) => {
       }`}
     >
       <ul>
-        <li>Home</li>
-        <li>About us</li>
+        <li>
+          <Link to="/"> Home</Link>
+        </li>
+        <li>
+          <Link to="/about-us"> About us</Link>
+        </li>
         <li>Contacts</li>
         <li>Map</li>
         <li>More</li>

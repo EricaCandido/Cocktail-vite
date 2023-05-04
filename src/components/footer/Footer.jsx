@@ -1,4 +1,5 @@
 import styles from "./index.module.scss";
+import { Link } from "react-router-dom";
 import { FiPhoneCall } from "react-icons/fi";
 
 const Footer = () => {
@@ -6,8 +7,9 @@ const Footer = () => {
     <div className={styles.Footer}>
       <div className={styles.wrapper}>
         <div className={styles.links}>
-          <p>About us</p>
-          <p>Contacts</p>
+          <Link to="about-us">About us</Link>
+          <Link to="about-us">Contacts</Link>
+
           <p>Google maps</p>
         </div>
 
@@ -16,7 +18,7 @@ const Footer = () => {
           <p>Partita Iva: ******</p>
           <p>
             <FiPhoneCall /> 333 22 55 77 111
-          </p>{" "}
+          </p>
           <p>Via Roma, 5.</p>
         </div>
       </div>

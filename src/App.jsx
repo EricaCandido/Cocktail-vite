@@ -1,7 +1,6 @@
 import styles from "./App.module.scss";
 import Content from "./components/content/Content";
 import Hero from "./components/hero";
-import Footer from "./components/footer";
 import Menu from "./components/menu";
 import { useState, useEffect } from "react";
 import { GET } from "./utils/http";
@@ -25,6 +24,7 @@ function App() {
     isVisible: false,
     data: {},
   });
+  const [cocktailLetter, setCocktailLetter] = useState("a");
 
   reserved &&
     setTimeout(() => {
@@ -32,12 +32,12 @@ function App() {
     }, 4000);
 
   useEffect(() => {
-    GET("https://www.thecocktaildb.com/api/json/v1/1/search.php?f=f").then(
-      ({ drinks }) => {
-        setCocktailList(() => drinks);
-      }
-    );
-  }, []);
+    GET(
+      `https://www.thecocktaildb.com/api/json/v1/1/search.php?f=${cocktailLetter}`
+    ).then(({ drinks }) => {
+      setCocktailList(() => drinks);
+    });
+  }, [cocktailLetter]);
   return (
     <div className={styles.App}>
       <Menu menuVisible={menuVisible} />
@@ -68,6 +68,7 @@ function App() {
         setCategory={setCategory}
         setMenuVisibility={setMenuVisibility}
         setReservationVisibility={setReservationVisibility}
+        setCocktailLetter={setCocktailLetter}
       />
 
       {modalContext.isVisible ? (
@@ -82,7 +83,6 @@ function App() {
           setCocktailList={setCocktailList}
         />
       )}
-      <Footer />
     </div>
   );
 }
